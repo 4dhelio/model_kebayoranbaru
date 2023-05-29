@@ -3,8 +3,8 @@ import pickle
 import streamlit as st
 from streamlit_option_menu import option_menu
 
-rfr_model = pickle.load(open('./trained_model_kebayoranBaru.sav', 'rb'))
-scale_MMS = pickle.load(open('./scale_MMS_kebayoranBaru.pkl', 'rb'))
+rfr_model = pickle.load(open('4dhelio/model_kebayoranbaru/trained_model_kebayoranBaru.sav', 'rb'))
+scale_MMS = pickle.load(open('4dhelio/model_kebayoranbaru//scale_MMS_kebayoranBaru.pkl', 'rb'))
 
 def predict_price(input_data):
     
