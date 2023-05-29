@@ -1,10 +1,15 @@
+import os
 import numpy as np
 import pickle
 import streamlit as st
 from streamlit_option_menu import option_menu
 
-rfr_model = pickle.load(open('4dhelio/model_kebayoranbaru/trained_model_kebayoranBaru.sav', 'rb'))
-scale_MMS = pickle.load(open('4dhelio/model_kebayoranbaru//scale_MMS_kebayoranBaru.pkl', 'rb'))
+current_dir = os.path.dirname(os.path.abspath(__file__))
+model_file_path = os.path.join(current_dir, 'trained_model_kebayoranBaru.sav')
+scale_file_path = os.path.join(current_dir, 'scale_MMS_kebayoranBaru.pkl')
+
+rfr_model = pickle.load(open(model_file_path, 'rb'))
+scale_MMS = pickle.load(open(scale_file_path, 'rb'))
 
 def predict_price(input_data):
     
